@@ -27,11 +27,39 @@ def base_counter(s):
 
 base_counter(seq)
 
+a = 0
+g = 0
+t = 0 
+c = 0
+
+for base in seq:
+    if base == "A":
+        a += 1
+    elif base == "T":
+        t += 1
+    elif base == "G":
+        g += 1
+    else:
+        c += 1
+    
+per_a= a / len(seq) * 100 
+per_t= t / len(seq) * 100 
+per_g= g / len(seq) * 100 
+per_c= c / len(seq) * 100 
+
+gc = (g + c) / len(seq) * 100
+
 print("\n================================================\n")
 print("Brucella Abortus 16s rRNA Sequence Analysis")
 print("\n===============================================")
 
 print(f"\nStrenght: {total_base}")
 print(f"\nBase Counts: {base_counter(seq)}")
+print("\n================================================\n")
+print(f"Adenine  (A): {per_a:.2f}%")
+print(f"Thymine  (T): {per_t:.2f}%")
+print(f"Guanine  (G): {per_g:.2f}%")
+print(f"Cytosine (C): {per_c:.2f}%")
+print(f"\nGC Content  :  {gc:.2f}%")
 print("\n================================================")
 
