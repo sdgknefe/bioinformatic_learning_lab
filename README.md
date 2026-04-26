@@ -22,6 +22,14 @@ I regularly analyze biological sequences and implement core bioinformatics metho
 - GC content calculation
 - Nucleotide distribution analysis
 - Sequence processing workflows
+- DNA - RNA transcribing
+
+---
+
+## ⚙️ Technologies Used
+
+- Python 3
+- random module
 
 ---
 
