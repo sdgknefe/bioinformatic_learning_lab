@@ -23,6 +23,7 @@ I regularly analyze biological sequences and implement core bioinformatics metho
 - Nucleotide distribution analysis
 - Sequence processing workflows
 - DNA - RNA transcribing
+- Revers complement of DNA
 
 ---
 
