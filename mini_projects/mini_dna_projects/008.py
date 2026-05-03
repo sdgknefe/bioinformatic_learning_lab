@@ -27,7 +27,7 @@ def base_count(dna):
 
 def transcription(dna):
     
-    return dna.replace("A", "T")
+    return dna.replace("T", "U")
 
 def report(dna):
     
