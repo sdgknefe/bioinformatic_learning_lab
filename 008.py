@@ -1,44 +1,41 @@
 import random
-
-random.seed()
+random.seed(0)
 
 def random_dna(min_len, max_len):
-
     bases = "ATGC"
-    length = random.randint(min_len,max_len)
+    len = random.randint(min_len, max_len)
+    return ''.join(random.choices(bases, k=len))
 
-    return ''.join(random.choices(bases, k=length))
+def reverse_c(dna):
+    
+    revc = {"A": "T", "T": "A", "G": "C", "C": "G"}
+    return ''.join(revc[base] for base in dna)[::-1]
 
-def bases_count(dna):
-
+def base_count(dna):
     a = t = g = c = 0
-
     for base in dna:
         if base == "A":
             a += 1
-        elif base == "T":
+        if base == "T":
             t += 1
-        elif base == "G":
+        if base == "G":
             g += 1
-        elif base == "C":
-            c += 1 
+        if base == "C":
+            c += 1
 
     return a, t, g, c
 
-def revers_complement(dna):
-
-    complement = {"A": "T", "T": "A", "G": "C", "C": "G"}
-    return ''.join(complement[base] for base in dna)[::-1]
-
 def transcription(dna):
-    return dna.replace("T", "U")
+    
+    return dna.replace("A", "T")
 
 def report(dna):
-
-    a, t, g, c, = bases_count(dna)
+    
+    a, t, g, c = base_count(dna)
     rna = transcription(dna)
-    revc = revers_complement(dna)
-    gc = (g+c) / len(dna) * 100
+    revc = reverse_c(dna)
+
+    gc = (g + c) / len(dna) * 100
 
     print("================= Sequence Analysis =================\n")
     print(f"DNA: {dna}\n")
@@ -53,6 +50,6 @@ def report(dna):
     print("\n=====================================================\n")
     print(f"RNA: {rna}")
 
-dna = random_dna(50, 150)
+dna = random_dna(50, 250)
 
 report(dna)
