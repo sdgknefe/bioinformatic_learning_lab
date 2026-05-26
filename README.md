@@ -24,6 +24,7 @@ I regularly analyze biological sequences and implement core bioinformatics metho
 - Sequence processing workflows
 - DNA - RNA transcribing
 - Revers complement of DNA
+- FASTA Parser
 
 ---
 
